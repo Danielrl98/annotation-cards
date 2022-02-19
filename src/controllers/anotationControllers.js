@@ -1,4 +1,4 @@
-const { response } = require('express')
+const { request,response } = require('express')
 const anotations = require('../models/AnotationData')
 
 
@@ -11,7 +11,7 @@ module.exports ={
         },
  async create(request,response){
       
-        const {title,notes,priority} = request.body
+        
         const anotationCreated = await anotations.create(
             {
                 title,
@@ -19,10 +19,7 @@ module.exports ={
                 priority
             }
         )
-
-
-
-        return request.body(anotationCreated)
+       // return response.json(anotationCreated)
         
     },
   async delete(request,response){
@@ -31,6 +28,7 @@ module.exports ={
 _id: id
         })
         if(anotationDelete){
+            
             return response.json(anotationDelete)
         }else{
             return response.status(401).json({error: 'erro'})
