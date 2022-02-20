@@ -1,5 +1,4 @@
 const { request,response } = require('express')
-const mongoose = require('mongoose')
 const anotations = require('../models/AnotationData')
 
 module.exports= {
