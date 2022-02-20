@@ -13,5 +13,24 @@ module.exports= {
            return response.json(priorityNotes)
        
               
+     },
+     async update(request,response){
+
+     const {id} = await request.params 
+        
+     const prioritiesUpdate  = await anotations.findOne({
+         _id: id
+
+     })
+     if(prioritiesUpdate.priority){
+       prioritiesUpdate.priority = false
+     } else{
+        prioritiesUpdate.priority = true
      }
+    await prioritiesUpdate.save()
+    return response.json(prioritiesUpdate)
+
+    }
 }
+
+  
