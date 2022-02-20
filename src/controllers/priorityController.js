@@ -1,13 +1,18 @@
-const { response } = require('express')
+const { request,response } = require('express')
+const mongoose = require('mongoose')
 const anotations = require('../models/AnotationData')
 
 module.exports= {
 
    async read(request,response){
-        
-           const prioritys =  request.query  
+
+           const prioritys =  await request.query  
            
           const priorityNotes = await anotations.find(prioritys)
-          return response.json(priorityNotes)
+
+         
+           return response.json(priorityNotes)
+       
+              
      }
 }
