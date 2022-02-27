@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function Index({data}){
 return(
     
@@ -12,6 +13,7 @@ return(
             </div>
       </div>
       <textarea defaultValue={data.notes}></textarea>
+
       <span>!</span>
     </li>
     

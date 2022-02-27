@@ -3,8 +3,9 @@ import './global.css'
 import './aside.css'
 import './app.css'
 import './main.css'
-import Index from './Componentes/notes/Index'
+import Notes from './Componentes/notes'
 import api from './services/api'
+import RadioButtom from './Componentes/RadioButton'
 
 function App() {
 
@@ -38,9 +39,16 @@ function App() {
   },[])
   useEffect(()=>{
     function enableSubmitButton(){
-      
+      let btn = document.getElementById("btn_submit")
+      btn.style.background ="#ffd3ca"
+      if(title && notes){
+        btn.style.background ="#e88f7a"
+     
+      }  
     }
-  },[])
+    enableSubmitButton()
+  },[title,notes])
+  
     
  return( 
 
@@ -54,15 +62,17 @@ function App() {
       </div>
       <div className="input-block">
         <label htmlFor="nota">Anotações</label>
-        <textarea onChange={e => setNotes(e.target.value)} value={notes}></textarea>
-        <button type="submit">Salvar</button>
+        <textarea required onChange={e => setNotes(e.target.value)} value={notes}></textarea>
+        <RadioButtom/>
+        
+        <button id="btn_submit" type="submit">Salvar</button>
       </div>
     </form>
   </aside>
   <main>
     <ul>
       {allNotes.map(data=>(
-       <Index data={data}/>
+       <Notes data={data}/>
       ))}
     </ul>
   </main>
