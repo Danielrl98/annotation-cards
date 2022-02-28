@@ -11,6 +11,6 @@ require('./config/dbConfig')
 app.use(cors())
 app.use(express.json())
 app.use(routers)
-app.listen(3334,()=>{
+app.listen(process.env.PORT || 3334,()=>{
     console.log('Node Conectado')
 })
