@@ -1,1 +1,1 @@
-web: npm run back
+Web: node src/index.js
