@@ -5,8 +5,8 @@ module.exports= {
 
    async read(request,response){
 
-           const prioritys =  await request.query  
-           
+           const prioritys =  await request.query
+        
           const priorityNotes = await anotations.find(prioritys)
 
          

@@ -7,3 +7,6 @@ aside div.radioOptions{
     justify-content: center;
     flex-direction: row;
 }
+.RadioSpan{
+    font-size: 14px;
+}

@@ -27,11 +27,12 @@ li.notepad-infos{
 li.notepad-infos strong{
     display: block;
     font-size: 16px;
-    color:#333
+    color:#333;
+    text-transform: uppercase;
 }
 li.notepad-infos div div{
     color:#ffeae6;
-    cursor:pointer;
+
 }
 li.notepad-infos div div:hover{
     color:#eb8f7a;
@@ -48,8 +49,10 @@ li.notepad-infos textarea{
     border:0;
     background-color: #fff;
     resize:none;
+   
 
 }
+
 li.notepad-infos span{
     color:#c4c4c4;
     cursor:pointer;
