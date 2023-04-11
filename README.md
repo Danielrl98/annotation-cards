@@ -1,5 +1,1 @@
-# annotation-cards
-
-## Link do App:
-
-https://infinite-garden-63371.herokuapp.com/
+Aplicativo Front e Back-end sobre bloco de anotações, utilizei ReactJS, nodeJS e mongoDB
